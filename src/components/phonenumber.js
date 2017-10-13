@@ -9,6 +9,7 @@ module.exports = function(app) {
         settings: {
           input: true,
           tableView: true,
+          inputType: 'tel',
           inputMask: '(999) 999-9999',
           label: '',
           key: 'phonenumberField',
@@ -19,7 +20,9 @@ module.exports = function(app) {
           protected: false,
           unique: false,
           persistent: true,
+          hidden: false,
           defaultValue: '',
+          clearOnHide: true,
           validate: {
             required: false
           }

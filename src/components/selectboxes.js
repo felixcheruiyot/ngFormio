@@ -12,10 +12,12 @@ module.exports = function(app) {
         readOnly: '=',
         model: '=ngModel',
         gridRow: '=',
-        gridCol: '='
+        gridCol: '=',
+        options: '=?'
       },
       templateUrl: 'formio/components/selectboxes-directive.html',
       link: function($scope, el, attrs, ngModel) {
+        if ($scope.options && $scope.options.building) return;
         // Initialize model
         var model = {};
         angular.forEach($scope.component.values, function(v) {
@@ -79,6 +81,8 @@ module.exports = function(app) {
           inline: false,
           protected: false,
           persistent: true,
+          hidden: false,
+          clearOnHide: true,
           validate: {
             required: false
           }
