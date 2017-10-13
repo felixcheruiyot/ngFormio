@@ -9,6 +9,7 @@
     ng-init="calendarOpen = false"
     ng-disabled="readOnly"
     ng-required="isRequired(component)"
+    ng-model-options="{timezone:'UTC/GMT'}"
     is-open="calendarOpen"
     datetime-picker="{{ component.format }}"
     datepicker-mode="component.datepickerMode"
